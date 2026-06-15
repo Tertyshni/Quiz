@@ -165,7 +165,7 @@
 // console.log(Split("10/08/2020", "/"));
 
 //10
-function print(template, ...args) {
+function print(template, args) {
     let result = template;
 
     for (let i = 0; i < args.length; i++) {
