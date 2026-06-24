@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>RGB Slider</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+}
+
+#square{
+    width: 200px;
+    height: 200px;
+    background: rgb(35,35,35);
+    margin-bottom: 20px;
+}
+
+.row{
+    margin: 10px 0;
+}
+</style>
+</head>
+<>
+
+    <h2>RGB Перемикач кольору</h2>
+
+    <div id="square"></div>
+
+    <div class="row">
+        R:
+        <input type="range" id="r" min="0" max="255" value="35">
+        <span id="rValue">35</span>
+    </div>
+
+    <div class="row">
+        G:
+        <input type="range" id="g" min="0" max="255" value="35">
+        <span id="gValue">35</span>
+    </div>
+
+    <div class="row">
+        B:
+        <input type="range" id="b" min="0" max="255" value="35">
+        <span id="bValue">35</span>
+    </div>
+    <script src="DOM2.js"></script>
+</body>
+</html>

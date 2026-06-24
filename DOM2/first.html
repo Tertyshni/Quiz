@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        font-family: Arial, sans-serif;
+        margin: 30px;
+    }
+
+    #menu{
+        position: absolute;
+        display: none;
+        background: white;
+        border: 1px solid gray;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    #menu div{
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    #menu div:hover{
+        background: lightgray;
+    }
+</style>
+</head>
+<body>
+        <h2>Власне контекстне меню</h2>
+    <p>Натисніть праву кнопку миші.</p>
+
+    <div id="menu">
+        <div onclick="alert('Пункт 1')">Пункт 1</div>
+        <div onclick="alert('Пункт 2')">Пункт 2</div>
+        <div onclick="changeColor()">Змінити фон</div>
+        <script src="DOM2.js"></script>
+</div>
+</body>
+</html>
