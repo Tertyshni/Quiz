@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        background:#f5eee8;
+        font-family:Arial;
+    }
+
+    .container{
+        width:900px;
+        margin:auto;
+        text-align:center;
+    }
+
+    form{
+        width:300px;
+        margin:20px auto;
+    }
+
+    input,select,button{
+        width:100%;
+        padding:8px;
+        margin-bottom:10px;
+    }
+
+    .error{
+        color:darkred;
+        font-size:14px;
+        margin-bottom:10px;
+    }
+
+    .colors{
+        display:flex;
+        flex-wrap:wrap;
+        gap:20px;
+        justify-content:center;
+    }
+
+    .card{
+        width:220px;
+        height:120px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .info{
+        background:rgba(255,255,255,.5);
+        padding:15px;
+        text-align:center;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+<h2>Create new color</h2>
+
+<form id="colorForm">
+
+<label>Color:</label>
+<input type="text" id="name">
+<div class="error" id="nameError"></div>
+
+<label>Type:</label>
+<select id="type">
+    <option>RGB</option>
+    <option>RGBA</option>
+    <option>HEX</option>
+</select>
+
+<label>Code:</label>
+<input type="text" id="code">
+<div class="error" id="codeError"></div>
+
+<button type="submit">Save</button>
+
+</form>
+
+<h2>All colors</h2>
+
+<div id="colors" class="colors"></div>
+
+</div>
+
+<script src="cookie.js"></script>
+</body>
+</html>
