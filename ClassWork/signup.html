@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .signup-form{
+            display: flex;
+            flex-direction: column;
+            /* justify-content:center; */
+            align-items: center;
+            position: relative;
+            width: 500px;
+            margin: 0px auto;
+            box-shadow: 1px 5px 5px rgb(100, 100, 100);
+            border-radius: 8px;
+        }
+        .form-header{
+            text-align: center;
+            color: rgb(40, 127, 204);
+            font-size: 40px;
+            padding: 10px;
+        }
+        .input-group {
+            justify-content:center;
+            display: flex;
+            padding: 10px;
+        }
+        .input-group-col{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .input-field {
+            margin: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+        .input-field input{
+            font-size: 14px;
+            border: 2px solid rgb(40, 127, 204);
+            border-radius: 4px;
+        }
+        .input-field select{
+            font-size: 14px;
+            border: 2px solid rgb(40, 127, 204);
+            border-radius: 4px;
+        }
+        .input-field label{
+            cursor: pointer;
+            font-size: 12px;
+            color:#5f5f5f;
+        }
+        .input-field label::after{
+            content: ":";
+        }
+
+        #submitBtn{
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            color:white;
+            background-color:rgb(40, 127, 204);
+            border: 0px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <!-- 
+    enctype:
+        text/plain - використовується рідко. Встановлено за замовчуванням
+        application/x-www-form-urlencoded - використовується частіше, данні збираются в об'єкт
+        multipart/form-data - підтримує використання файлів. Якщо не вказати, то на бекенд не будуть приходити файли
+    
+    target: де відрити сторінку після обробки форми
+        _blank - нова вкладка
+        _self - поточна вкладка
+
+    autocomplete:
+        on - включаєте підказки браузери
+        off - вимикаєте підказки браузери
+
+    name:
+        якщо задати ім'я формі, її можна буде отримати через document в JS. Example:
+            <form name='myForm'></form>
+            js:
+            document.forms.myForm
+    -->
+    <div class="signup-form">
+        <h1 class="form-header">Sign Up</h1>
+        <form name="signup-form" method="post" enctype="multipart/form-data" validate>
+            <div class="input-group">
+                <div class="input-field">
+                    <label for="nameInput">Name</label>
+                    <input required maxlength="60" minlength="2" type="text" id="nameInput" name="nameInput">
+                </div>
+                <div class="input-field">
+                    <label for="surnameInput">Surname</label>
+                    <input required maxlength="60" minlength="2" type="text" id="surnameInput" name="surnameInput">
+                </div>
+            </div>
+            <div class="input-group-col">
+                <div class="input-field">
+                    <label for="emailInput">Email</label>
+                    <input required type="email" name="emailInput" id="emailInput">
+                </div>
+                <div class="input-field">
+                    <label for="passwordInput">Password</label>
+                    <input required type="password" name="passwordInput" id="passwordInput">
+                </div>
+                <div class="input-field">
+                    <label for="repeatPasswordInput">Repeat password</label>
+                    <input required type="password" name="repeatPasswordInput" id="repeatPasswordInput">
+                </div>
+            </div>
+            <div class="input-group-col">
+                <div class="input-field">
+                    <label for="countryInput">Countries</label>
+                    <select required name="countryInput" id="countryInput">
+                        <option value="1">Ukraine</option>
+                        <option value="2">Poland</option>
+                        <option value="3">UK</option>
+                        <option value="4">Spain</option>
+                        <option value="5">Italy</option>
+                        <option value="6">German</option>
+                        <option value="7">USA</option>
+                        <option value="8">China</option>
+                        <option value="9">Japan</option>
+                        <option value="10">Brazil</option>
+                        <option value="11">Sweden</option>
+                        <option value="12">Greece</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="input-group-col">
+                <div class="input-field">
+                    <label for="phoneInput">Телефон:</label>
+                    <input type="text" id="phoneInput" placeholder="+380XXXXXXXXX" required>
+                </div>
+            </div>
+
+             <div class="input-group-col">
+                <div class="input-field">
+                    <label for="useravaInput">Profile photo</label>
+                    <input type="File" name="useravaInput" id="useravaInput">
+                </div>
+            <button id="submitBtn" type="submit">Sign Up</button>
+        </form>
+    </div>
+    <script src="./signup.js"></script>
+</body>
+</html>
