@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Products API</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .panel {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        input, select, button {
+            padding: 10px;
+            margin: 5px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        #products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        }
+
+        .product img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+        }
+
+        .product h3 {
+            margin-bottom: 5px;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #message {
+            margin: 15px 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Products API</h1>
+
+<div class="panel">
+    <h2>Пошук товарів</h2>
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Введіть назву товару"
+    >
+
+    <button onclick="searchProducts()">
+        Search
+    </button>
+
+    <button onclick="getProducts()">
+        Get all products
+    </button>
+</div>
+
+
+<div class="panel">
+
+    <h2>Limit, Skip та Sort</h2>
+
+    <label>
+        Limit:
+        <input
+            type="number"
+            id="limit"
+            value="10"
+            min="1"
+        >
+    </label>
+
+    <label>
+        Skip:
+        <input
+            type="number"
+            id="skip"
+            value="0"
+            min="0"
+        >
+    </label>
+
+    <label>
+        Sort:
+        <select id="sort">
+            <option value="title">Title</option>
+            <option value="price">Price</option>
+            <option value="rating">Rating</option>
+        </select>
+    </label>
+
+    <button onclick="getSortedProducts()">
+        Sort products
+    </button>
+
+</div>
+
+
+<!-- ОТРИМАННЯ ОДНОГО ТОВАРУ -->
+<div class="panel">
+
+    <h2>Get single product</h2>
+
+    <input
+        type="number"
+        id="productId"
+        placeholder="ID товару"
+        min="1"
+    >
+
+    <button onclick="getSingleProduct()">
+        Get product
+    </button>
+
+</div>
+
+
+<!-- ДОДАВАННЯ -->
+<div class="panel">
+
+    <h2>Add new product</h2>
+
+    <input
+        type="text"
+        id="newTitle"
+        placeholder="Назва товару"
+    >
+
+    <input
+        type="number"
+        id="newPrice"
+        placeholder="Ціна"
+    >
+
+    <button onclick="addProduct()">
+        Add product
+    </button>
+
+</div>
+
+
+<div class="panel">
+
+    <h2>Update product</h2>
+
+    <input
+        type="number"
+        id="updateId"
+        placeholder="ID товару"
+    >
+
+    <input
+        type="text"
+        id="updateTitle"
+        placeholder="Нова назва"
+    >
+
+    <input
+        type="number"
+        id="updatePrice"
+        placeholder="Нова ціна"
+    >
+
+    <button onclick="updateProduct()">
+        Update product
+    </button>
+
+</div>
+
+
+<div id="message"></div>
+
+<div id="products"></div>
+
+<script src="fetch.js"></script>
+
+</body>
+</html>
+```
