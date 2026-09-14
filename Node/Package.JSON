@@ -1,0 +1,15 @@
+{
+  "name": "pretty-console",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "pretty-console": "index.js"
+  },
+  "dependencies": {
+    "boxen": "^5.1.2",
+    "chalk": "^4.1.2",
+    "figlet": "^1.7.0",
+    "gradient-string": "^2.0.2"
+  }
+}
